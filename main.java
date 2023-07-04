@@ -1,10 +1,33 @@
+import java.util.Scanner;
+
 public class main {
-    public static void cnt(String[] args) {
-        int a = 5;
-        int b = 3;
+    public static int findMinimum(int[] array) {
+        int min = array[0];
 
-        int sum = a + b;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
 
-        System.out.println("The sum of " + a + " and " + b + " is: " + sum);
+        return min;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int size = scanner.nextInt();
+
+        int[] numbers = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+
+        int minimum = findMinimum(numbers);
+
+        System.out.println(minimum);
+
+        scanner.close();
     }
 }
