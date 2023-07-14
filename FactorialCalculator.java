@@ -16,7 +16,6 @@ public class FactorialCalculator {
 
         int result = factorial(number);
         System.out.println(result);
-
         input.close();
     }
 }

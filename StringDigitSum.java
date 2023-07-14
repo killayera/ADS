@@ -1,22 +1,22 @@
 import java.util.Scanner;
 
 public class StringDigitSum {
-    public static int sumDigits(String str) {
-        if (str == null || str.isEmpty()) {
+    public static int sumDigits(int n) {
+
+        if(n == 0){
             return 0;
         }
-
-        char firstChar = str.charAt(0);
-        int digitSum = Character.isDigit(firstChar) ? Character.getNumericValue(firstChar) : 0;
-
-        return digitSum + sumDigits(str.substring(1));
+        return n % 10 + sumDigits(n / 10);
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
 
-        int result = sumDigits(input);
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+
+        int result = sumDigits(n);
+
         System.out.println(result);
     }
 }
