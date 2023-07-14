@@ -4,10 +4,8 @@ public class powerCalculator {
     public static double calculatePower(double a, int n) {
         if (n == 0) {
             return 1;
-        } else if (n > 0) {
-            return a * calculatePower(a, n - 1);
         } else {
-            return 1 / (a * calculatePower(a, -n - 1));
+            return a * calculatePower(a, n - 1);
         }
     }
 
